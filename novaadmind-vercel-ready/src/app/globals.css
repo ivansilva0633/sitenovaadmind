@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 245, 245, 250;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Customizações para o NovaAdMind */
+.bg-gradient-primary {
+  background: linear-gradient(to right, #6d28d9, #4f46e5);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #6d28d9, #4f46e5);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Estilos para formulários */
+.form-input:focus {
+  border-color: #6d28d9;
+  box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.2);
+}
+
+/* Estilos para botões */
+.btn-primary {
+  @apply bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-white text-purple-600 border border-purple-600 font-bold py-2 px-4 rounded hover:bg-purple-50 transition-colors;
+}
+
+/* Estilos para cards */
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden;
+}
+
+.card-header {
+  @apply px-6 py-4 border-b border-gray-200;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+/* Estilos para dashboard */
+.sidebar {
+  @apply w-64 bg-gray-900 text-white h-screen fixed left-0 top-0;
+}
+
+.main-content {
+  @apply ml-64 p-6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sidebar {
+    @apply w-16;
+  }
+  
+  .main-content {
+    @apply ml-16;
+  }
+  
+  .sidebar-text {
+    @apply hidden;
+  }
+}
